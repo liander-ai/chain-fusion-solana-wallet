@@ -1,0 +1,7 @@
+.dfx/
+node_modules/
+dist/
+.env
+*.wasm
+canister_ids.json
+.vessel/
