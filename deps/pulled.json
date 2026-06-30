@@ -1,0 +1,13 @@
+{
+  "canisters": {
+    "tghme-zyaaa-aaaar-qarca-cai": {
+      "name": "sol_rpc",
+      "wasm_hash": "1733b1e5a2c14f9488b5314d6c0d189669b3841b2d360a4f88a554216c423115",
+      "wasm_hash_download": "1733b1e5a2c14f9488b5314d6c0d189669b3841b2d360a4f88a554216c423115",
+      "init_guide": "https://internetcomputer.org/docs/current/developer-docs/multi-chain/solana/sol-rpc/sol-rpc-canister",
+      "init_arg": null,
+      "candid_args": "(InstallArgs)",
+      "gzip": true
+    }
+  }
+}

@@ -3,7 +3,12 @@
   "canisters": {
     "backend": {
       "type": "motoko",
-      "main": "src/backend/main.mo"
+      "main": "src/backend/main.mo",
+      "dependencies": ["sol_rpc"]
+    },
+    "sol_rpc": {
+      "type": "pull",
+      "id": "tghme-zyaaa-aaaar-qarca-cai"
     }
   }
 }
