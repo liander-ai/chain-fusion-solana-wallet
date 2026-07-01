@@ -135,3 +135,10 @@ deploy assigns a different local id.
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## More demos
+
+- **[anchor-staking-rewards](https://github.com/liander-ai/anchor-staking-rewards)** - a token staking vault with time-based rewards and a LiteSVM test suite
+- **[safe-solana-mcp](https://github.com/liander-ai/safe-solana-mcp)** - policy-gated Solana and ICP access for AI agents over MCP
+
+More at [github.com/liander-ai](https://github.com/liander-ai).
