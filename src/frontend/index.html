@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chain Fusion Wallet</title>
+  <meta name="description" content="A Solana wallet owned by an Internet Computer canister. No bridge, no stored key." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="head">
+      <span class="eyebrow">Chain Fusion</span>
+      <h1>A Solana wallet owned by an Internet&nbsp;Computer canister</h1>
+      <p class="sub">No bridge. No stored private key. The canister derives its own Solana address and signs transactions with threshold Ed25519.</p>
+    </header>
+
+    <section class="card">
+      <div class="card-label">
+        <span>Canister-controlled address</span>
+        <span class="net">devnet</span>
+      </div>
+      <div class="addr-row">
+        <code id="address" class="addr">loading…</code>
+        <button id="copyBtn" class="ghost" title="Copy" disabled>copy</button>
+      </div>
+      <a id="addrExplorer" class="explorer" href="#" target="_blank" rel="noopener" hidden>View on Solana Explorer</a>
+    </section>
+
+    <section class="card balance">
+      <div class="card-label"><span>Balance</span>
+        <button id="refreshBtn" class="ghost" disabled>refresh</button>
+      </div>
+      <div class="bal-value"><span id="balSol">—</span><span class="unit">SOL</span></div>
+      <div id="balLamports" class="muted">—</div>
+    </section>
+
+    <section class="card">
+      <div class="card-label"><span>Send SOL</span></div>
+      <form id="sendForm" class="send">
+        <label>Recipient
+          <input id="recipient" type="text" placeholder="Base58 Solana address" autocomplete="off" spellcheck="false" />
+        </label>
+        <label>Amount (SOL)
+          <input id="amount" type="number" step="0.0001" min="0" placeholder="0.01" />
+        </label>
+        <button id="sendBtn" type="submit" class="primary" disabled>Sign &amp; send</button>
+      </form>
+      <div id="result" class="result" hidden></div>
+    </section>
+
+    <footer class="foot">
+      <p>The canister signs Solana transactions directly through the Internet Computer's threshold Ed25519, then broadcasts them via the SOL RPC canister. The key never exists in one place.</p>
+      <a id="repoLink" href="https://github.com/liander-ai/chain-fusion-solana-wallet" target="_blank" rel="noopener">Source on GitHub</a>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

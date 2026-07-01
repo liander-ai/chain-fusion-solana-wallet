@@ -1,0 +1,10 @@
+[
+  // This is a devnet demo. The frontend loads its agent from a CDN (esm.sh) and
+  // fonts from Google, so a strict same-origin CSP is intentionally not applied.
+  // For a production deployment, self-host those assets and switch to "standard".
+  {
+    "match": "**/*",
+    "security_policy": "disabled",
+    "disable_security_policy_warning": true
+  }
+]

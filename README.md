@@ -28,6 +28,14 @@ another, with no bridge and no stored key.
 - **Sends** SOL: it builds the transaction, signs it, and broadcasts it
 - Returns a link to the resulting transaction on Solana explorer
 
+## Frontend
+
+A small web UI (served from an asset canister) shows the canister-controlled
+Solana address and its live balance, and lets you send SOL through the canister.
+Running against a local replica, reading a real devnet balance:
+
+![Chain Fusion Wallet](docs/frontend.png)
+
 ## Architecture
 
 ```
@@ -103,9 +111,16 @@ solana transfer <ADDRESS_FROM_STEP_4> 0.1 --allow-unfunded-recipient
 # 6. read the balance, then send some SOL back out
 dfx canister call backend get_balance
 dfx canister call backend send_sol '("<RECIPIENT_ADDRESS>", 10000000)'
+
+# 7. (optional) deploy the web UI, then open it against your backend id
+dfx deploy frontend
+echo "open the printed frontend URL with ?backend=$(dfx canister id backend)"
 ```
 
-`send_sol` returns the transaction signature and an explorer link.
+`send_sol` returns the transaction signature and an explorer link. The web UI
+reads the backend canister id from a `?backend=<id>` query parameter (falling
+back to the default in `src/frontend/app.js`), so it still connects when a fresh
+deploy assigns a different local id.
 
 ## Notes
 
